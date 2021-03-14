@@ -17,7 +17,7 @@ def hello_world():
 
 @app.route('/predict',methods=['POST','GET'])
 def predict():
-    int_features=[int(x) for x in request.form.values()]
+    int_features=[float(x) for x in request.form.values()]
     final=[np.array(int_features)]
     print(int_features)
     print(final)
@@ -25,9 +25,9 @@ def predict():
     output='{0:.{1}f}'.format(prediction[0][1], 2)
 
     if output>str(0.5):
-        return render_template('index.html',pred='There is a high of defaulting your loan')
+        return render_template('index.html',pred='Data shows, Person may be Suffering with Diabetes')
     else:
-        return render_template('index.html',pred='We can sanction him loan')
+        return render_template('index.html',pred='Data shows, Person may not be Suffering with Diabetes')
 
 
 if __name__ == '__main__':
