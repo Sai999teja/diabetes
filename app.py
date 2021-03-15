@@ -2,10 +2,10 @@ from flask import Flask,request, url_for, redirect, render_template
 import pickle
 import numpy as np
 import joblib
-from sklearn.ensemble import GradientBoostingClassifier
 
 app = Flask(__name__)
 
+from sklearn.ensemble import GradientBoostingClassifier
 
 model = pickle.load(open('pickle_diabetes.pkl','rb'))
 
@@ -26,10 +26,9 @@ def predict():
     output='{0:.{1}f}'.format(prediction[0][1], 2)
 
     if output>str(0.5):
-        return render_template('index.html',pred='Data shows, Person may be Suffering with Diabetes')
+        return render_template('index.html',pred='There is a high chance of defaulting your loan, based on the entered data.')
     else:
-        return render_template('index.html',pred='Data shows, Person may not be Suffering with Diabetes')
-
+        return render_template('index.html',pred='we can santion him a loan, based on the entered data.')
 
 if __name__ == '__main__':
     app.run(debug=True)
