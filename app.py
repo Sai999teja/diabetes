@@ -23,7 +23,8 @@ def predict():
     print(int_features)
     print(final)
     prediction=model.predict(final)
-    output = prediction.ravel()
+    output = prediction.astype(int)
+    output = output[0]
     
 
     if output == np.array([1]):
