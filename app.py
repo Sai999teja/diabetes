@@ -2,7 +2,7 @@ from flask import Flask,request, url_for, redirect, render_template
 import pickle
 import numpy as np
 import joblib
-import sklearn
+from sklearn.ensemble import GradientBoostingClassifier
 
 app = Flask(__name__)
 
