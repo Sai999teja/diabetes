@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 from sklearn.ensemble import GradientBoostingClassifier
 
-model = pickle.load(open('pickle_diabetes.pkl','rb'))
+model = pickle.load(open('diabetes_deploy.pkl','rb'))
 
 
 
