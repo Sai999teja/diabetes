@@ -27,7 +27,7 @@ def predict():
 
     if (output == 1) :
         return render_template('index.html',pred='There is a high chance of person suffering with diabetes, based on the entered data.')
-    else:
+    elif (output == 0):
         return render_template('index.html',pred='There is a low chance of person suffering with diabetes, based on the entered data.')
 
 if __name__ == '__main__':
