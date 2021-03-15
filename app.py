@@ -27,7 +27,7 @@ def predict():
     output = output[0]
     
 
-    if output == np.array([1]):
+    if output == 1 :
         return render_template('index.html',pred='There is a high chance of person suffering with diabetes, based on the entered data.')
     else:
         return render_template('index.html',pred='There is a low chance of person suffering with diabetes, based on the entered data.')
