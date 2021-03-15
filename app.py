@@ -24,7 +24,7 @@ def predict():
     print(final)
     prediction=model.predict(final)
     output = prediction.astype(int)
-    output = output[0]
+    output = output[0][0]
     
 
     if output == 1 :
