@@ -18,11 +18,10 @@ def hello_world():
 
 @app.route('/predict',methods=['POST','GET'])
 def predict():
-    int_features=[float(x) for x in request.form.values()]
-    final=[np.array(int_features)]
-    print(int_features)
-    print(final)
-    prediction=model.predict(final)
+    int_features = [int(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
+
     output = int(prediction[0])
     
 
