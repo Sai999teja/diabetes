@@ -25,9 +25,9 @@ def predict():
     output = int(prediction[0])
     
 
-    if (output == int(1)) :
+    if (output == 0) :
         return render_template('index.html',pred='There is a high chance of person suffering with diabetes, based on the entered data.')
-    elif (output == int(0)):
+    elif (output == 1):
         return render_template('index.html',pred='There is a low chance of person suffering with diabetes, based on the entered data.')
 
 if __name__ == '__main__':
