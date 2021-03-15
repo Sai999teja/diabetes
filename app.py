@@ -22,10 +22,11 @@ def predict():
     final=[np.array(int_features)]
     print(int_features)
     print(final)
-    prediction=model.predict_proba(final)
-    output='{0:.{1}f}'.format(prediction[0][1], 2)
+    prediction=model.predict(final)
+    output = int(prediction.ravel())
+    
 
-    if output>str(0.5):
+    if output == 1:
         return render_template('index.html',pred='There is a high chance of person suffering with diabetes, based on the entered data.')
     else:
         return render_template('index.html',pred='There is a low chance of person suffering with diabetes, based on the entered data.')
