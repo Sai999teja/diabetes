@@ -23,7 +23,7 @@ def predict():
     print(int_features)
     print(final)
     prediction=model.predict(final)
-    ooutput = int(prediction[0])
+    output = int(prediction[0])
     
 
     if (output == 1) :
